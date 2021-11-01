@@ -20,6 +20,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ji-uN-s6p">
                                 <rect key="frame" x="87" y="160" width="240" height="240"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DVi-4Q-2Li">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="240" id="Yu3-rX-iED"/>
+                                            <constraint firstAttribute="width" constant="240" id="bJ4-UD-v23"/>
+                                        </constraints>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvt-PE-an0">
                                         <rect key="frame" x="191" y="209" width="49" height="31"/>
                                         <state key="normal" title="Button"/>
@@ -28,19 +35,25 @@
                                             <action selector="onEditTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NXe-cR-4ki"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Km-TE-F7x">
+                                        <rect key="frame" x="120" y="120" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="0.0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Tvt-PE-an0" secondAttribute="bottom" id="2g1-uq-C7b"/>
+                                    <constraint firstAttribute="bottom" secondItem="DVi-4Q-2Li" secondAttribute="bottom" id="AhW-Fu-c0u"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tvt-PE-an0" secondAttribute="trailing" id="B5X-q3-Drw"/>
+                                    <constraint firstItem="4Km-TE-F7x" firstAttribute="centerY" secondItem="8Ji-uN-s6p" secondAttribute="centerY" id="Ekn-NL-3fW"/>
+                                    <constraint firstAttribute="trailing" secondItem="DVi-4Q-2Li" secondAttribute="trailing" id="L1z-vz-htf"/>
+                                    <constraint firstItem="4Km-TE-F7x" firstAttribute="centerX" secondItem="8Ji-uN-s6p" secondAttribute="centerX" id="jqx-6u-ROs"/>
                                     <constraint firstAttribute="width" constant="240" id="oDj-ci-zX2"/>
                                     <constraint firstAttribute="height" constant="240" id="x5m-oX-iHi"/>
-                                    <constraint firstAttribute="trailing" secondItem="Tvt-PE-an0" secondAttribute="trailing" id="xzd-9A-EJi"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVi-4Q-2Li">
-                                <rect key="frame" x="97" y="170" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8k-w2-54r">
                                 <rect key="frame" x="119.5" y="432" width="175" height="28"/>
                                 <attributedString key="attributedText">
@@ -93,9 +106,9 @@
                     </view>
                     <connections>
                         <outlet property="btnEdit" destination="Tvt-PE-an0" id="owM-RH-EUT"/>
-                        <outlet property="btnSave" destination="Tvt-PE-an0" id="btp-ya-EgM"/>
-                        <outlet property="imageView" destination="DVi-4Q-2Li" id="HdP-6q-VbO"/>
-                        <outlet property="viewPhoto" destination="8Ji-uN-s6p" id="ixa-EL-PNX"/>
+                        <outlet property="btnSave" destination="f8l-j9-Q93" id="cWY-jo-Juj"/>
+                        <outlet property="imageView" destination="DVi-4Q-2Li" id="203-Ux-qQU"/>
+                        <outlet property="profileView" destination="8Ji-uN-s6p" id="Vc7-dx-ue7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

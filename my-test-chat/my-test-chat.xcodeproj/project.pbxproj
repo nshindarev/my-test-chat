@@ -12,6 +12,8 @@
 		AF17FC3D27208F3000D400CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF17FC3B27208F3000D400CC /* Main.storyboard */; };
 		AF17FC3F27208F3300D400CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF17FC3E27208F3300D400CC /* Assets.xcassets */; };
 		AF17FC4227208F3300D400CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF17FC4027208F3300D400CC /* LaunchScreen.storyboard */; };
+		AF7BF7E127300C68008AFE74 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF7BF7DF27300C68008AFE74 /* Roboto-Bold.ttf */; };
+		AF7BF7E227300C68008AFE74 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF7BF7E027300C68008AFE74 /* Roboto-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		AF17FC3E27208F3300D400CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF17FC4127208F3300D400CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF17FC4327208F3300D400CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF7BF7DF27300C68008AFE74 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		AF7BF7E027300C68008AFE74 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +87,19 @@
 		AF6FA6342729E6AC0073DD71 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AF7BF7E327300C6B008AFE74 /* Fonts */,
 				AF17FC3E27208F3300D400CC /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		AF7BF7E327300C6B008AFE74 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AF7BF7E027300C68008AFE74 /* Roboto-Regular.ttf */,
+				AF7BF7DF27300C68008AFE74 /* Roboto-Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +162,8 @@
 			files = (
 				AF17FC4227208F3300D400CC /* LaunchScreen.storyboard in Resources */,
 				AF17FC3F27208F3300D400CC /* Assets.xcassets in Resources */,
+				AF7BF7E227300C68008AFE74 /* Roboto-Regular.ttf in Resources */,
+				AF7BF7E127300C68008AFE74 /* Roboto-Bold.ttf in Resources */,
 				AF17FC3D27208F3000D400CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
