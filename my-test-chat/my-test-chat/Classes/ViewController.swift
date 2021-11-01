@@ -14,6 +14,8 @@ class ViewController: UIViewController, UIAlertViewDelegate{
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var btnEdit: UIButton!
     @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var lblInit: UILabel!
+    @IBOutlet weak var lblFullName: UILabel!
     
     var imagePicker = UIImagePickerController()
     
@@ -25,6 +27,13 @@ class ViewController: UIViewController, UIAlertViewDelegate{
         profileView.layer.cornerRadius = profileView.bounds.width / 2
         imageView.layer.cornerRadius = profileView.bounds.width / 2
         
+        self.lblFullName.text = "Nikita Shindarev"
+        self.lblInit.text = self.getInitials(fullName: lblFullName.text ?? "AA")
+        self.lblInit.layer.zPosition = 1
+        self.profileView.bringSubviewToFront(lblInit)
+
+        self.lblInit.isHidden = false
+
         btnSave.layer.cornerRadius = 14
         imagePicker.delegate = self
     }
@@ -84,6 +93,11 @@ class ViewController: UIViewController, UIAlertViewDelegate{
         
         self.present(self.imagePicker, animated: true, completion: nil)
     }
+    
+    func getInitials(fullName: String) -> String? {
+        return fullName.components(separatedBy: " ")
+            .reduce("") { ($0 == "" ? "" : $0.first) + $1.first}
+    }
 }
 
 
@@ -102,5 +116,14 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
+        
+        self.lblInit.isHidden = true
+    }
+}
+
+// MARK: ================== FullName --> Initials =======================
+extension String {
+    public var first: String {
+        return String(self[startIndex])
     }
 }
