@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIAlertViewDelegate{
+class ProfileViewController: UIViewController, UIAlertViewDelegate{
 
     // MARK: UIFields
     @IBOutlet weak var imageView: UIImageView!
@@ -102,7 +102,7 @@ class ViewController: UIViewController, UIAlertViewDelegate{
 
 
 // MARK: ================== UIImagePickerController DELEGATE METHODS =======================
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 

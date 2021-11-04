@@ -7,22 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF002847273166AB00CE3616 /* ChatCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF002845273166AB00CE3616 /* ChatCellTableViewCell.swift */; };
+		AF002848273166AB00CE3616 /* ChatCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF002846273166AB00CE3616 /* ChatCellTableViewCell.xib */; };
+		AF0028502731714800CE3616 /* ConversationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF00284E2731714800CE3616 /* ConversationListViewController.swift */; };
 		AF17FC3627208F3000D400CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17FC3527208F3000D400CC /* AppDelegate.swift */; };
-		AF17FC3A27208F3000D400CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17FC3927208F3000D400CC /* ViewController.swift */; };
-		AF17FC3D27208F3000D400CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF17FC3B27208F3000D400CC /* Main.storyboard */; };
+		AF17FC3A27208F3000D400CC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF17FC3927208F3000D400CC /* ProfileViewController.swift */; };
+		AF17FC3D27208F3000D400CC /* MainScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF17FC3B27208F3000D400CC /* MainScene.storyboard */; };
 		AF17FC3F27208F3300D400CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF17FC3E27208F3300D400CC /* Assets.xcassets */; };
-		AF17FC4227208F3300D400CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF17FC4027208F3300D400CC /* LaunchScreen.storyboard */; };
 		AF7BF7E127300C68008AFE74 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF7BF7DF27300C68008AFE74 /* Roboto-Bold.ttf */; };
 		AF7BF7E227300C68008AFE74 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF7BF7E027300C68008AFE74 /* Roboto-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF002845273166AB00CE3616 /* ChatCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellTableViewCell.swift; sourceTree = "<group>"; };
+		AF002846273166AB00CE3616 /* ChatCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCellTableViewCell.xib; sourceTree = "<group>"; };
+		AF00284E2731714800CE3616 /* ConversationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationListViewController.swift; sourceTree = "<group>"; };
 		AF17FC3227208F3000D400CC /* my-test-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my-test-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF17FC3527208F3000D400CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF17FC3927208F3000D400CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AF17FC3C27208F3000D400CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF17FC3927208F3000D400CC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AF17FC3C27208F3000D400CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainScene.storyboard; sourceTree = "<group>"; };
 		AF17FC3E27208F3300D400CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AF17FC4127208F3300D400CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF17FC4327208F3300D400CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF7BF7DF27300C68008AFE74 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		AF7BF7E027300C68008AFE74 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -39,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF00284927316C0000CE3616 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				AF002846273166AB00CE3616 /* ChatCellTableViewCell.xib */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		AF17FC2927208F3000D400CC = {
 			isa = PBXGroup;
 			children = (
@@ -69,7 +81,9 @@
 		AF6FA6322729E6840073DD71 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AF17FC3927208F3000D400CC /* ViewController.swift */,
+				AF00284E2731714800CE3616 /* ConversationListViewController.swift */,
+				AF002845273166AB00CE3616 /* ChatCellTableViewCell.swift */,
+				AF17FC3927208F3000D400CC /* ProfileViewController.swift */,
 				AF17FC3527208F3000D400CC /* AppDelegate.swift */,
 			);
 			path = Classes;
@@ -78,8 +92,8 @@
 		AF6FA6332729E68F0073DD71 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				AF17FC4027208F3300D400CC /* LaunchScreen.storyboard */,
-				AF17FC3B27208F3000D400CC /* Main.storyboard */,
+				AF00284927316C0000CE3616 /* Subviews */,
+				AF17FC3B27208F3000D400CC /* MainScene.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -160,11 +174,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF17FC4227208F3300D400CC /* LaunchScreen.storyboard in Resources */,
 				AF17FC3F27208F3300D400CC /* Assets.xcassets in Resources */,
 				AF7BF7E227300C68008AFE74 /* Roboto-Regular.ttf in Resources */,
+				AF002848273166AB00CE3616 /* ChatCellTableViewCell.xib in Resources */,
 				AF7BF7E127300C68008AFE74 /* Roboto-Bold.ttf in Resources */,
-				AF17FC3D27208F3000D400CC /* Main.storyboard in Resources */,
+				AF17FC3D27208F3000D400CC /* MainScene.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +189,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF17FC3A27208F3000D400CC /* ViewController.swift in Sources */,
+				AF17FC3A27208F3000D400CC /* ProfileViewController.swift in Sources */,
+				AF0028502731714800CE3616 /* ConversationListViewController.swift in Sources */,
+				AF002847273166AB00CE3616 /* ChatCellTableViewCell.swift in Sources */,
 				AF17FC3627208F3000D400CC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,20 +199,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AF17FC3B27208F3000D400CC /* Main.storyboard */ = {
+		AF17FC3B27208F3000D400CC /* MainScene.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AF17FC3C27208F3000D400CC /* Base */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AF17FC4027208F3300D400CC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF17FC4127208F3300D400CC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = MainScene.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -330,7 +338,7 @@
 				INFOPLIST_FILE = "my-test-chat/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainScene;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -360,7 +368,7 @@
 				INFOPLIST_FILE = "my-test-chat/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainScene;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
