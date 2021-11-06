@@ -24,4 +24,5 @@ class ChatCellTableViewCell: UITableViewCell {
         lblDate.text = model.date
         lblMessage.text = model.msg
     }
+    
 }

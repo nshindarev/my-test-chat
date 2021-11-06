@@ -21,17 +21,17 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZIQ-AN-UkV">
                         <rect key="frame" x="16" y="16" width="380" height="95"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hhj-nz-CZl">
-                                <rect key="frame" x="0.0" y="0.0" width="182" height="20.5"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hhj-nz-CZl">
+                                <rect key="frame" x="0.0" y="0.0" width="380" height="20.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daria Chupyrkina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROA-WN-6tU" userLabel="FullName">
-                                        <rect key="frame" x="0.0" y="0.0" width="130.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="200" verticalHuggingPriority="251" text="Daria Chupyrkina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROA-WN-6tU" userLabel="FullName">
+                                        <rect key="frame" x="0.0" y="0.0" width="328.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16:40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGA-VT-Isf" userLabel="Date">
-                                        <rect key="frame" x="138.5" y="0.0" width="43.5" height="20.5"/>
+                                        <rect key="frame" x="336.5" y="0.0" width="43.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -45,6 +45,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hhj-nz-CZl" secondAttribute="trailing" id="1g5-s1-iyR"/>
+                            <constraint firstItem="hhj-nz-CZl" firstAttribute="leading" secondItem="ZIQ-AN-UkV" secondAttribute="leading" id="3Xt-Y1-7WL"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
