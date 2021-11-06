@@ -9,8 +9,8 @@ import UIKit
 
 class ConversationListViewController: UIViewController {
 
-    // ========================  Data Source structure + data  =========================
-    //
+    // ------------------------  Data Source structure + data  ------------------------
+    
     var conversations = [
         ConversationsSection(online: true,
                              conversations: [Conversation(userName: "Daria Chupyrkina",
@@ -38,34 +38,30 @@ class ConversationListViewController: UIViewController {
         let lastMessage: String
     }
     
-    // =================================== UI Fields ===================================
+    // ------------------------------------------------------------------------
+    
     @IBOutlet weak var tableConversations: UITableView!
+    @IBOutlet weak var navBarTitle: UINavigationItem!
     
     private var cellIdentifier = String(describing: ChatCellTableViewCell.self)
-    
-    let userimage = UIImageView(image: UIImage(named: "avatar"))
+    private let userimage = UIImageView(image: UIImage(named: "avatar"))
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // ui table view
         tableConversations.register(UINib(nibName: String(describing: ChatCellTableViewCell.self),  bundle: nil), forCellReuseIdentifier: cellIdentifier)
         tableConversations.dataSource = self
-        
-        
-//        let profileButton = UIBarButtonItem(image: UIImage(named: "avatar"), style: .plain, target: self, action: #selector(ConversationListViewController.onAvatarPressed))
-//
-//        self.navigationItem.rightBarButtonItem  = profileButton
-//        self.navigationItem.leftBarButtonItem  = profileButton
-        
+
+        // ui profile button
         setupConstraints()
         setUpGestureRecognizer()
+        
+        // ui profile label
+        navBarTitle.titleView = navTitleWithImageAndText(titleText: "Name Surname", imageName: "online-indicator")
     }
     
-//    @objc
-//    func onAvatarPressed (){
-//        print("pressed avatar")
-//    }
-    
+    // ------------------------ AVATAR IMAGE INIT -----------------------------
     
     func setupConstraints() {
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -74,22 +70,71 @@ class ConversationListViewController: UIViewController {
         userimage.clipsToBounds = true
         userimage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            userimage.rightAnchor.constraint(equalTo: navigationBar.rightAnchor, constant: -16),
-            userimage.bottomAnchor.constraint(equalTo: navigationBar.bottomAnchor, constant: -10),
+            userimage.rightAnchor.constraint(equalTo: navigationBar.rightAnchor, constant: -32),
+            userimage.bottomAnchor.constraint(equalTo: navigationBar.bottomAnchor, constant: 16),
             userimage.heightAnchor.constraint(equalToConstant: 32),
             userimage.widthAnchor.constraint(equalTo: userimage.heightAnchor)
         ])
     }
     
     func setUpGestureRecognizer() {
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(profile))
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onAvatarTapped))
             userimage.isUserInteractionEnabled = true
             userimage.addGestureRecognizer(tapGestureRecognizer)
     }
 
-    @objc func profile() {
+    @objc func onAvatarTapped() {
         print("pressed avatar")
+        
+//
+//        let secondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+//        self.navigationController?.pushViewController(secondViewController, animated: true)
+
+        let next = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        self.present(next, animated: true, completion: nil)
     }
+    
+    func navTitleWithImageAndText(titleText: String, imageName: String) -> UIView {
+
+        // Creates a new UIView
+        let titleView = UIView()
+
+        // Creates a new text label
+        let label = UILabel()
+        label.text = titleText
+        label.sizeToFit()
+        label.center = titleView.center
+        label.textAlignment = NSTextAlignment.center
+
+        // Creates the image view
+        let image = UIImageView()
+        image.image = UIImage(named: imageName)
+
+        // Maintains the image's aspect ratio:
+        let imageAspect = image.image!.size.width / image.image!.size.height
+
+        // Sets the image frame so that it's immediately before the text:
+        let imageX = (label.frame.origin.x - label.frame.size.height * imageAspect) - 16;
+        let imageY = label.frame.origin.y
+
+        let imageWidth = label.frame.size.height * imageAspect
+        let imageHeight = label.frame.size.height
+
+        image.frame = CGRect(x: imageX, y: imageY, width: imageWidth, height: imageHeight)
+
+        image.contentMode = UIView.ContentMode.scaleAspectFit
+
+        // Adds both the label and image view to the titleView
+        titleView.addSubview(label)
+        titleView.addSubview(image)
+
+        // Sets the titleView frame to fit within the UINavigation Title
+        titleView.sizeToFit()
+
+        return titleView
+    }
+    
+    
 
 
 }

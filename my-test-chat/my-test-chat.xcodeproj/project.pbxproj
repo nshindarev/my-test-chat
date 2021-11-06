@@ -17,6 +17,7 @@
 		AF7BF7E127300C68008AFE74 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF7BF7DF27300C68008AFE74 /* Roboto-Bold.ttf */; };
 		AF7BF7E227300C68008AFE74 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF7BF7E027300C68008AFE74 /* Roboto-Regular.ttf */; };
 		AFFF43322735586C005E888A /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = AFFF43312735586C005E888A /* avatar.png */; };
+		AFFF43342736B202005E888A /* online-indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = AFFF43332736B202005E888A /* online-indicator.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AF7BF7DF27300C68008AFE74 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		AF7BF7E027300C68008AFE74 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		AFFF43312735586C005E888A /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
+		AFFF43332736B202005E888A /* online-indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "online-indicator.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		AFFF43302735585D005E888A /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				AFFF43332736B202005E888A /* online-indicator.png */,
 				AFFF43312735586C005E888A /* avatar.png */,
 			);
 			path = Pictures;
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFFF43322735586C005E888A /* avatar.png in Resources */,
+				AFFF43342736B202005E888A /* online-indicator.png in Resources */,
 				AF17FC3F27208F3300D400CC /* Assets.xcassets in Resources */,
 				AF7BF7E227300C68008AFE74 /* Roboto-Regular.ttf in Resources */,
 				AF002848273166AB00CE3616 /* ChatCellTableViewCell.xib in Resources */,
