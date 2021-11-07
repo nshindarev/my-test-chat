@@ -122,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="1489.8550724637682" y="-4.0178571428571423"/>
         </scene>
-        <!--Nikita Shindarev-->
+        <!--Conversations View Controller-->
         <scene sceneID="red-0G-iur">
             <objects>
-                <viewController id="gxi-vb-HFv" customClass="ConversationListViewController" customModule="my_test_chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gxi-vb-HFv" userLabel="Conversations View Controller" customClass="ConversationListViewController" customModule="my_test_chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yah-3C-aZl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

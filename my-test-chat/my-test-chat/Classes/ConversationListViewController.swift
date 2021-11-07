@@ -52,6 +52,8 @@ class ConversationListViewController: UIViewController {
         // ui table view
         tableConversations.register(UINib(nibName: String(describing: ChatCellTableViewCell.self),  bundle: nil), forCellReuseIdentifier: cellIdentifier)
         tableConversations.dataSource = self
+        tableConversations.delegate = self
+        
 
         // ui profile button
         setupConstraints()
@@ -84,11 +86,6 @@ class ConversationListViewController: UIViewController {
     }
 
     @objc func onAvatarTapped() {
-        print("pressed avatar")
-        
-//
-//        let secondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
-//        self.navigationController?.pushViewController(secondViewController, animated: true)
 
         let next = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         self.present(next, animated: true, completion: nil)
@@ -139,7 +136,6 @@ class ConversationListViewController: UIViewController {
 
 }
 
-
 // MARK: ===================== DataSource =====================
 extension ConversationListViewController: UITableViewDataSource{
     
@@ -165,6 +161,16 @@ extension ConversationListViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         (conversations[section].online ? "Online":"History")
+    }
+}
+
+extension ConversationListViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = ChatViewController()
+        vc.title = "Chat"
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
