@@ -8,31 +8,32 @@
 import UIKit
 import MessageKit
 
-struct Sender: SenderType{
-    var senderId: String
-    var displayName: String
-}
-struct Message: MessageType{
-    var sender: SenderType
-    var messageId: String
-    var sentDate: Date
-    var kind: MessageKind
-}
+//struct Sender: SenderType{
+//    var senderId: String
+//    var displayName: String
+//}
+//
+//struct Message: MessageType{
+//    var sender: SenderType
+//    var messageId: String
+//    var sentDate: Date
+//    var kind: MessageKind
+//}
 
 
 class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
     
-    let currentUser = Sender (senderId: "self", displayName: "hardcocded name")
-    let otherUser = Sender (senderId: "other", displayName: "John Smith")
+    let currentUser = ConversationListViewController.Sender (online: false, senderId: "self", displayName: "hardcocded name")
+    let otherUser = ConversationListViewController.Sender (online: false, senderId: "other", displayName: "John Smith")
     
     var messages = [MessageType]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        messages.append(Message(sender: currentUser, messageId: "1", sentDate: Date().addingTimeInterval(-86400), kind: .text("hi, how u doin'?")))
+        messages.append(ConversationListViewController.Message(sender: currentUser, messageId: "1", sentDate: Date().addingTimeInterval(-86400), kind: .text("hi, how u doin'?")))
         
-        messages.append(Message(sender: otherUser, messageId: "2", sentDate: Date().addingTimeInterval(-86300), kind: .text("hi, how u doin'?")))
+        messages.append(ConversationListViewController.Message(sender: otherUser, messageId: "2", sentDate: Date().addingTimeInterval(-86300), kind: .text("hi, how u doin'?")))
         
         messagesCollectionView.dataSource = self
         messagesCollectionView.messagesLayoutDelegate = self

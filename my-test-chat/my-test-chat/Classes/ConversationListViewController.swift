@@ -6,40 +6,52 @@
 //
 
 import UIKit
+import MessageKit
 
 class ConversationListViewController: UIViewController {
-
-    // ------------------------  Data Source structure + data  ------------------------
     
-    var conversations = [
-        ConversationsSection(online: true,
-                             conversations: [Conversation(userName: "Daria Chupyrkina",
-                                                         date: "16:20",
-                                                         lastMessage: "Hi, how u doin'?"),
-                                            
-                                            Conversation(userName: "Arslan Nevlyaev",
-                                                         date: "17:50",
-                                                         lastMessage: "Hi, how u doin'?")]),
-        ConversationsSection(online: false,
-                             conversations: [Conversation(userName: "Zhenya Zlatina",
-                                                         date: "09:30",
-                                                         lastMessage:"Hi, how u doin'?")])
+    // ================================  Structures ==============================
 
-    ]
+    struct ConversationList{
+        var onlineConversations: [Sender: [Message]] = [:]
+        var offlineConversations: [Sender: [Message]] = [:]
+    }
     
-    struct ConversationsSection{
-        let online: Bool
-        let conversations: [Conversation]
+    public struct Sender: SenderType, Hashable{
+        var online: Bool
+        var senderId: String
+        var displayName: String
         
-    }
-    struct Conversation {
-        let userName: String
-        let date: String
-        let lastMessage: String
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(senderId.hashValue)
+        }
+        static func == (lhs: Sender, rhs: Sender) -> Bool {
+            return lhs.senderId == rhs.senderId && lhs.displayName == rhs.displayName
+        }
     }
     
-    // ------------------------------------------------------------------------
+    public struct Message: MessageType{
+        var sender: SenderType
+        var messageId: String
+        var sentDate: Date
+        var kind: MessageKind
+    }
     
+    //================================ DATA FIELDS  =================================
+    var messages: ConversationList
+
+    func appendConversation(newSender: Sender, newMsg: [Message]) {
+        
+        var conversations = newSender.online ? self.messages.onlineConversations : self.messages.offlineConversations
+        conversations[newSender]?.append(contentsOf: newMsg)
+    }
+    func appendConversation(newSender: Sender, newMsg: Message) {
+        
+        var conversations = newSender.online ? self.messages.onlineConversations : self.messages.offlineConversations
+        conversations[newSender]?.append(newMsg)
+    }
+    
+    // ===============================     UI      =====================================
     @IBOutlet weak var tableConversations: UITableView!
     @IBOutlet weak var navBarTitle: UINavigationItem!
     
@@ -141,26 +153,29 @@ extension ConversationListViewController: UITableViewDataSource{
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return conversations.count    }
+        return 2
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        conversations[section].conversations.count
+        return section == 0 ? Array(messages.onlineConversations).count : Array(messages.offlineConversations).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let section = conversations[indexPath.section]
-        let conversation: Conversation = section.conversations[indexPath.row]
+        let section = indexPath.section == 0 ? messages.onlineConversations : messages.offlineConversations
+        let companion = Array(section.keys)[indexPath.row]
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ChatCellTableViewCell else {return UITableViewCell()}
-        cell.configure(with: .init(name: conversation.userName, msg: conversation.lastMessage, date: conversation.date))
+        guard let lastMessage: ConversationListViewController.Message = section[companion]?.last else {return UITableViewCell()}
+        
+        cell.configure(with: lastMessage)
         cell.accessoryType = .disclosureIndicator
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        (conversations[section].online ? "Online":"History")
+        (messages[section].online ? "Online":"History")
     }
 }
 
@@ -169,7 +184,9 @@ extension ConversationListViewController: UITableViewDelegate{
         
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = ChatViewController()
-        vc.title = "Chat"
+        
+        
+        // insert: second user name
         navigationController?.pushViewController(vc, animated: true)
     }
 }
