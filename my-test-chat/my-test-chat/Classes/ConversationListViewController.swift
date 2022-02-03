@@ -130,13 +130,9 @@ class ConversationListViewController: UIViewController {
 
         return titleView
     }
-    
-    
-
-
 }
 
-// MARK: ===================== DataSource =====================
+// MARK: ===================== DataSource + Delegate =====================
 extension ConversationListViewController: UITableViewDataSource{
     
     
@@ -165,12 +161,9 @@ extension ConversationListViewController: UITableViewDataSource{
 }
 
 extension ConversationListViewController: UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        let vc = ChatViewController()
-        vc.title = "Chat"
-        navigationController?.pushViewController(vc, animated: true)
+        self.performSegue(withIdentifier: "messagesSegue", sender: self)
     }
 }
 

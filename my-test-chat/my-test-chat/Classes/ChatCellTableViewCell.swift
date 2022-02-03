@@ -11,7 +11,7 @@ class ChatCellTableViewCell: UITableViewCell {
 
     struct Model{
         let name: String
-        let msg: String
+        let msg: String?
         let date: String
     }
     
@@ -22,7 +22,7 @@ class ChatCellTableViewCell: UITableViewCell {
     func configure (with model: Model){
         lblFullName.text = model.name
         lblDate.text = model.date
-        lblMessage.text = model.msg
+        lblMessage.text = model.msg ?? "No messages yet"
     }
     
 }

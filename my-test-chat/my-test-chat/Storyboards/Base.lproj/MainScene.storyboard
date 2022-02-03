@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TuW-jd-lvI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TuW-jd-lvI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -120,12 +120,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1489.8550724637682" y="-4.0178571428571423"/>
+            <point key="canvasLocation" x="452" y="-711"/>
         </scene>
         <!--Conversations View Controller-->
         <scene sceneID="red-0G-iur">
             <objects>
-                <viewController id="gxi-vb-HFv" userLabel="Conversations View Controller" customClass="ConversationListViewController" customModule="my_test_chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConversationListViewController" id="gxi-vb-HFv" userLabel="Conversations View Controller" customClass="ConversationListViewController" customModule="my_test_chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yah-3C-aZl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,11 +148,28 @@
                     <connections>
                         <outlet property="navBarTitle" destination="MLH-Js-Jw6" id="D5d-z4-1Wx"/>
                         <outlet property="tableConversations" destination="eh0-dZ-rPD" id="fym-7j-d0W"/>
+                        <segue destination="mmn-Px-sxM" kind="show" identifier="messagesSegue" id="HJX-zE-78U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOV-zM-iqi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="452.17391304347831" y="-4.0178571428571423"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="tdT-m7-gUL">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" id="mmn-Px-sxM" customClass="ChatViewController" customModule="my_test_chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MI7-fp-ce7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="yMG-Fd-3Zx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NqO-mO-Squ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6t0-3N-P1V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1233" y="-4"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SPw-rQ-vyi">

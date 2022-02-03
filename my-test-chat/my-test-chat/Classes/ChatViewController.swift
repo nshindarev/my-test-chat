@@ -22,7 +22,7 @@ struct Message: MessageType{
 
 class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
     
-    let currentUser = Sender (senderId: "self", displayName: "hardcocded name")
+    let currentUser = Sender (senderId: "self", displayName: "Nikita Shindarev")
     let otherUser = Sender (senderId: "other", displayName: "John Smith")
     
     var messages = [MessageType]()
@@ -30,15 +30,13 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        messages.append(Message(sender: currentUser, messageId: "1", sentDate: Date().addingTimeInterval(-86400), kind: .text("hi, how u doin'?")))
+        messages.append(Message(sender: currentUser, messageId: "1", sentDate: Date().addingTimeInterval(-2), kind: .text("hi, how u doin'?")))
         
-        messages.append(Message(sender: otherUser, messageId: "2", sentDate: Date().addingTimeInterval(-86300), kind: .text("hi, how u doin'?")))
+        messages.append(Message(sender: otherUser, messageId: "2", sentDate: Date().addingTimeInterval(-1), kind: .text("hi, how u doin'?")))
         
-        messagesCollectionView.dataSource = self
+        messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        
-        
     }
     
     func currentSender() -> SenderType {
